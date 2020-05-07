@@ -26,6 +26,11 @@ public class MultipleCitiesTest {
     }
 
     @Test
+    void testThatPopulationOfThirdResultIs281800() {
+        assertEquals(281800,cities[2].getPopulation());
+    }
+
+    @Test
     void testThatLastResultIsLowerHutt() {
         assertEquals("Lower Hutt", cities[cities.length-1].getName());
     }
@@ -36,6 +41,7 @@ public class MultipleCitiesTest {
         for (City c:cities) {
             if (!c.getCountryCode().equals("NZL")) {
                 nzlCheck = true;
+                break;
             }
         }
         assertFalse(nzlCheck);
