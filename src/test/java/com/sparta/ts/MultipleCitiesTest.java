@@ -1,9 +1,7 @@
 package com.sparta.ts;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringApplication;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -13,11 +11,8 @@ public class MultipleCitiesTest {
 
     @BeforeAll
     public static void init() {
-        String[] args = {""};
-        ApiWithJdbcApplication.main(args);
-        JacksonAPIReader jacksonAPIReader = new JacksonAPIReader();
         String extension = "countrycode/NZL";
-        cities = jacksonAPIReader.getCitiesFromApi(extension);
+        cities = JacksonAPIReader.getCitiesFromApi(extension);
     }
 
     @Test
