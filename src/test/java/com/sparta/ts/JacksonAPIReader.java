@@ -7,19 +7,19 @@ import java.net.URL;
 public class JacksonAPIReader {
     static boolean serverRunning = false;
 
-    public static City[] getCitiesFromApi(String extension) { // id/1
+    public static Author[] getAuthorsFromApi(String extension) { // id/1
         ObjectMapper objectMapper = new ObjectMapper();
-        City[] cities = null;
+        Author[] authors = null;
         try {
             if (!serverRunning) {
                 run();
                 serverRunning = true;
             }
-            cities = objectMapper.readValue(new URL("http://localhost:8080/api/city/" + extension), City[].class);
+            authors = objectMapper.readValue(new URL("http://localhost:8080/api/author/" + extension), Author[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return cities;
+        return authors;
     }
 
     private static void run(){

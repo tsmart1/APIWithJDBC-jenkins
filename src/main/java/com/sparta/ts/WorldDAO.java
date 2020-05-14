@@ -25,20 +25,20 @@ public class WorldDAO {
         }
     }
 
-    public static ArrayList<City> runQuery(String query) {
+    public static ArrayList<Author> runQuery(String query) {
 
         Statement statement = null;
         ResultSet results = null;
-        ArrayList<City> cities = new ArrayList<>();
+        ArrayList<Author> authors = new ArrayList<>();
 
         try {
             statement = connection.createStatement();
             statement.executeQuery("use world");
             results = statement.executeQuery(query);
             while (results.next()) {
-                cities.add(new City(results.getInt(1),
+                authors.add(new Author(results.getInt(1),
                         results.getString(2), results.getString(3),
-                        results.getString(4), results.getInt(5)));
+                        results.getString(4), results.getString(5)));
             }
 
         } catch (SQLException ex) {
@@ -46,7 +46,7 @@ public class WorldDAO {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         }
-        return cities;
+        return authors;
     }
 
 }

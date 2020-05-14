@@ -5,6 +5,6 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
-@SelectClasses({MultipleCitiesTest.class, SingleCityTest.class})
+@SelectClasses({MultipleAuthorTest.class, SingleAuthorTest.class})
 public class TestRunner {
 }
