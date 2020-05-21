@@ -26,13 +26,13 @@ public class MultipleAuthorTest {
     }
 
     @Test
-    void testFirstResultEmail() {
-        assertEquals("rking@example.net", authors[0].getEmail());
+    void testThatFirstResultHasFirstNameNicole() {
+        assertEquals("Nicole", authors[0].getFirst_name());
     }
 
     @Test
-    void testSecondResultEmail() {
-        assertEquals("ebartoletti@example.net", authors[1].getEmail());
+    void testThatSecondResultHasFirstNameVirgil() {
+        assertEquals("Virgil", authors[1].getFirst_name());
     }
 
     @Test
@@ -46,4 +46,25 @@ public class MultipleAuthorTest {
         }
         assertFalse(whiteCheck);
     }
+
+    @Test
+    void testFirstResultEmail() {
+        assertEquals("rking@example.net", authors[0].getEmail());
+    }
+
+    @Test
+    void testSecondResultEmail() {
+        assertEquals("ebartoletti@example.net", authors[1].getEmail());
+    }
+
+    @Test
+    void testFirstResultBirthDate() {
+        assertEquals("1984-09-04", authors[0].getBirthdate());
+    }
+
+    @Test
+    void testSecondResultBirthDate() {
+        assertEquals("2000-07-08", authors[1].getBirthdate());
+    }
+
 }
